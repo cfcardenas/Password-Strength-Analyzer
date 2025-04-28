@@ -13,5 +13,9 @@ Crtieria needed to meet the password strength rule:
 - Avoids consequitive repeating characters
 - At least 6 unique characters
 
+## Project Instructions
+The code setup process is easy and user-friendly. The terminal will ask the user to input a password to check its strength. Depending on user input, it will determine what criteria were not met and make suggestions based on what is needed to fortify the password. This helps the user understand what they are missing and basic descriptions are granted to help a user determine what they have to do to improve their password. 
+
+## Additional Information
 The project is an interactive loop that allows continuous input until all requirements designated are met.
 It is meant to provide a user-friendly approach and actionable suggestions to guide the user in the proper direction.
