@@ -40,10 +40,10 @@ def check_password_strength(password):
         feedback.append("Password should contain at least 6 unique characters.")
         suggestions.append("- Try to use more unique characters to increase complexity.")
 
-    # Check for disallowed characters
-    if any(char in disallowed_chars for char in password):
-        feedback.append("Password contains disallowed characters.")
-        suggestions.append(f"- Avoid using any of these characters: {' '.join(disallowed_chars)}")
+    # Disallowed characters
+    if re.search(r"[ ,;\"']", password):
+        feedback.append("Password contains disallowed characters (e.g., space, comma, semicolon, quote).")
+        suggestions.append("- Remove spaces, commas, semicolons, and quotation marks from your password.")
 
     # Determine the final strength message and provide suggestions
     if feedback:
