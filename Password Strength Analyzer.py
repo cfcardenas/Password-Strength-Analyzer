@@ -40,7 +40,12 @@ def check_password_strength(password):
         feedback.append("Password should contain at least 6 unique characters.")
         suggestions.append("- Try to use more unique characters to increase complexity.")
 
-    # Determine final strength message and provide suggestions
+    # Check for disallowed characters
+    if any(char in disallowed_chars for char in password):
+        feedback.append("Password contains disallowed characters.")
+        suggestions.append(f"- Avoid using any of these characters: {' '.join(disallowed_chars)}")
+
+    # Determine the final strength message and provide suggestions
     if feedback:
         return f"Weak: {', '.join(feedback)}\nSuggestions: \n" + "\n".join(suggestions)
 
